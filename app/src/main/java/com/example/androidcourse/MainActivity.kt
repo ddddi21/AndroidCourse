@@ -23,7 +23,9 @@ class MainActivity : AppCompatActivity() {
             tv_phone.text = edit_phone.text
             tv_change_phone.visibility = View.VISIBLE
         }
-
+        tv_name.text = intent.getStringExtra("name")
+        tv_user_name.text = """@${intent.getStringExtra("username")}"""
+        tv_phone.text = """+7${intent.getStringExtra("phone")}"""
     }
 
 }
