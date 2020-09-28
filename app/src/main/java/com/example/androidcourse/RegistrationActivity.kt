@@ -32,7 +32,7 @@ class RegistrationActivity : AppCompatActivity() {
                 et_registration_username.error = "Username must have least 8 characters"
             }
             else isusername = true
-            if(phone.length < 10){
+            if(phone.length != 10){
                 et_registration_phone.error = "Phone must have 10 characters"
             } else isphone = true
             if(isname and isusername and isphone) {
