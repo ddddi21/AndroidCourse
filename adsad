@@ -1,0 +1,81 @@
+[33mcommit ab7c971837bf47b1e35005834f42e055b2b44541[m[33m ([m[1;36mHEAD -> [m[1;32mmaster[m[33m, [m[1;31morigin/master[m[33m)[m
+Merge: 4b92881 09c7f24
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 16:22:39 2020 +0300
+
+    test
+
+[33mcommit 4b92881dce1033dfd2a792f12b70cb36898592b1[m
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 16:20:20 2020 +0300
+
+    test
+
+[33mcommit 09c7f24f2e88ab27a6291c4429a9a4f3e76e01d6[m
+Merge: 184b7b9 80ba9cd
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 16:01:33 2020 +0300
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 184b7b906c0367a2d68a2f5e499f5c3ee024bbc6[m
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 16:00:55 2020 +0300
+
+    Revert "Initial commit"
+    
+                                                                                        This reverts commit 25bfa319
+
+[33mcommit 80ba9cd9264dc9b59091517e847a1c2764679b03[m
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 15:54:10 2020 +0300
+
+    Revert "Initial commit"
+    
+    This reverts commit 25bfa319
+
+[33mcommit ee32e0aa8d41687784ff8e702616a5f0534e3af8[m
+Merge: 9d1d0a4 097b297
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 15:53:02 2020 +0300
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit 9d1d0a4308da249c851aae4117b2b9458cbc83b8[m
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 15:52:51 2020 +0300
+
+    normalize
+
+[33mcommit 097b297b5a2e2c0bf4f377ccd98fdee43942a2ab[m[33m ([m[1;31morigin/task/hww_4[m[33m, [m[1;32mtask/hww_4[m[33m)[m
+Merge: d42d26b 17ddfa4
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 14:27:47 2020 +0300
+
+    Merge remote-tracking branch 'origin/master'
+
+[33mcommit d42d26b4f2876ca0727b91b365264e81b66bcc8a[m
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 14:27:06 2020 +0300
+
+    back
+
+[33mcommit 17ddfa4cda25f77657a8e2b945657ce261c6d2af[m
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Oct 5 13:59:18 2020 +0300
+
+    first
+
+[33mcommit fe59850582ddc1a16f846e5dec466f9ce8e5eded[m
+Author: ddddi21 <55531213+ddddi21@users.noreply.github.com>
+Date:   Mon Sep 14 13:21:14 2020 +0300
+
+    Update .gitignore
+    
+    add in .gitignore
+
+[33mcommit 25bfa3192e282eea507e54c305097607892e3afe[m
+Author: ddddi21 <dilyra.as@gmail.com>
+Date:   Mon Sep 7 16:41:17 2020 +0300
+
+    Initial commit
