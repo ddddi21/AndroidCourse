@@ -10,4 +10,11 @@ interface WeatherApi {
     suspend fun getWeather(
         @Query("q")cityName: String
     ) : WeatherResponse
+
+    @GET("find?units=metric&lang=ru")
+    suspend fun getWeatherByLocation(
+        @Query("lat") latitude: Double,
+        @Query("lon") longitude: Double,
+        @Query("cnt") count: Int
+        ): WeatherResponseByList
 }

@@ -2,6 +2,7 @@ package com.example.androidcourse.network
 
 import com.example.androidcourse.BuildConfig
 import com.example.androidcourse.weatherUtils.WeatherApi
+import com.example.androidcourse.weatherUtils.WeatherResponse
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -44,5 +45,13 @@ object ApiFactory {
 
     val weatherApi: WeatherApi by lazy {
         retrofit.create(WeatherApi::class.java)
+    }
+
+    suspend fun getWeathersByLocation (lat: Double, lon: Double ): List<WeatherResponse>{
+        return  weatherApi.getWeatherByLocation(lat,lon, 15).cities
+    }
+
+    suspend fun getWeatherByCityName (name:String): WeatherResponse {
+        return weatherApi.getWeather(name)
     }
 }
