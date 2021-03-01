@@ -1,5 +1,6 @@
-package com.example.androidcourse
+package com.example.androidcourse.weatherUtils
 
+import com.example.androidcourse.weatherUtils.WeatherResponse
 import retrofit2.http.GET
 import retrofit2.http.Query;
 

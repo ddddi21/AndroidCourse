@@ -1,5 +1,6 @@
-package com.example.androidcourse
+package com.example.androidcourse.network
 
+import com.example.androidcourse.BuildConfig
 import okhttp3.Interceptor
 import okhttp3.Response
 import okhttp3.logging.HttpLoggingInterceptor

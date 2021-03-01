@@ -1,5 +1,7 @@
-package com.example.androidcourse
+package com.example.androidcourse.network
 
+import com.example.androidcourse.BuildConfig
+import com.example.androidcourse.weatherUtils.WeatherApi
 import okhttp3.Interceptor
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -12,7 +14,10 @@ object ApiFactory {
     private val apiKeyInterceptor = Interceptor { chain ->
         val original = chain.request()
         original.url().newBuilder()
-            .addQueryParameter(QUERY_API_KEY, BuildConfig.API_KEY)
+            .addQueryParameter(
+                QUERY_API_KEY,
+                BuildConfig.API_KEY
+            )
             .build()
             .let {
                 chain.proceed(

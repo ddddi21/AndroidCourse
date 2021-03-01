@@ -1,8 +1,10 @@
-package com.example.androidcourse
+package com.example.androidcourse.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.lifecycle.lifecycleScope
+import com.example.androidcourse.network.ApiFactory
+import com.example.androidcourse.R
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.coroutines.launch
