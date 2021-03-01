@@ -1,5 +1,7 @@
 package com.example.androidcourse
 
+import android.view.ViewGroup
+
 class CityListAdapter {
     private var list : List<Cat>,
     private val itemClick: (Cat) -> Unit
