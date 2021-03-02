@@ -62,18 +62,18 @@ class CityPageFragment: Fragment(), CoroutineScope {
                     //а там не передается в листе json'e восходы и закаты ну и пожалуйста ну и не надо
 //                    tv_page_city_temp.setTextColor(color.findColor(weatherResponse.main.temp))
 //                    iv_weather_icon = weatherResponse.weather[3].icon
-                    tv_page_city_temp.text = "${weatherResponse.main.temp}°"
+                    tv_page_city_temp.text = "${weatherResponse.main.temp.toInt()}°"
                     tv_page_city_name.text = "Интересующий город: ${weatherResponse.sys.country}, ${weatherResponse.name}"
                     tv_page_humidity.text = "Что по влажности?: ${weatherResponse.main.humidity}%"
                     tv_page_wind_deg.text = "Ветерок: ${WindService.
                     findWind(weatherResponse.wind.deg)}, ${weatherResponse.wind.speed} м/с"
                     tv_page_description.text = "${weatherResponse.weather[0].description}"
-                    tv_page_feels_like.text = "Ощущается как: ${weatherResponse.main.feelsLike}°"
+                    tv_page_feels_like.text = "Ощущается как: ${weatherResponse.main.feelsLike.toInt()}°"
                     tv_page_pressure.text = "Давление: ${weatherResponse.main.pressure} мм.рт.ст"
 //                    tv_page_sunrise.text = "Восход солнышка: $formattedDateSunrise"
 //                    tv_page_sunset.text = "Закат: $formattedDateSunset"
-                    tv_page_sunset.text = "max: ${weatherResponse.main.tempMax}°"
-                    tv_page_sunrise.text = "min: ${weatherResponse.main.tempMin}°"
+                    tv_page_sunset.text = "max: ${weatherResponse.main.tempMax.toInt()}°"
+                    tv_page_sunrise.text = "min: ${weatherResponse.main.tempMin.toInt()}°"
 
                 }
             }
