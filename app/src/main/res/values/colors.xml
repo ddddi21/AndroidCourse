@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#E0DBE8</color>
-    <color name="colorPrimaryDark">#82779A</color>
-    <color name="colorAccent">#530498</color>
-    <color name="superCold">#28017E</color>
+    <color name="colorPrimary">#5E023A</color>
+    <color name="colorPrimaryDark">#716B7A</color>
+    <color name="colorAccent">#42071F</color>
+    <color name="superCold">#03D4E6</color>
     <color name="cold">#05768A</color>
     <color name="fine">#887974</color>
     <color name="warm">#00B309</color>

@@ -1,21 +1,22 @@
 package com.example.androidcourse.main
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
-import androidx.lifecycle.lifecycleScope
-import com.example.androidcourse.network.ApiFactory
 import com.example.androidcourse.R
 import com.example.androidcourse.list.CityPageFragment
 import com.example.androidcourse.list.WeathersListFragment
+import com.example.androidcourse.network.ApiFactory
 import com.example.androidcourse.services.PermissionChecking
 import com.google.android.material.snackbar.Snackbar
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.weather_list_fragment.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
 import kotlin.coroutines.CoroutineContext
+
 
 class MainActivity : AppCompatActivity(), CoroutineScope{
     private val api = ApiFactory.weatherApi
@@ -39,7 +40,7 @@ class MainActivity : AppCompatActivity(), CoroutineScope{
     }
 
     fun swapFrame(frame: Fragment){
-        supportFragmentManager.beginTransaction().replace(R.id.frame_main,frame).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frame_main,frame).addToBackStack("back").commit()
     }
 
     override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {

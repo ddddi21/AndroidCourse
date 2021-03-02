@@ -43,6 +43,7 @@ object ApiFactory {
             .build()
     }
 
+
     val weatherApi: WeatherApi by lazy {
         retrofit.create(WeatherApi::class.java)
     }
@@ -51,8 +52,10 @@ object ApiFactory {
         return  weatherApi.getWeatherByLocation(lat,lon, 15).cities
     }
 
-    suspend fun getWeatherByCityName (name:String): WeatherResponse {
-        return weatherApi.getWeather(name)
+    suspend fun getWeatherByCityName (name:String): WeatherResponse? {
+        if(!name.isEmpty()) {
+            return weatherApi.getWeather(name)
+        } else return null
     }
 
     suspend fun getWeatherByCityId (name:Int): WeatherResponse {

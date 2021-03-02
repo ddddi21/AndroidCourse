@@ -18,17 +18,20 @@ import com.example.androidcourse.main.MainActivity
 import com.example.androidcourse.network.ApiFactory
 import com.example.androidcourse.services.WindService
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.snackbar.Snackbar
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.weather_list_fragment.*
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.runBlocking
+import retrofit2.HttpException
 import kotlin.coroutines.CoroutineContext
 
 class WeathersListFragment(val userWantToWeather: (Int)-> Unit): Fragment(), CoroutineScope {
     override val coroutineContext: CoroutineContext = Dispatchers.IO
     private var latitude: Double? = null
     private var longitude: Double? = null
-    private var adapter: WeatherAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -65,7 +68,6 @@ class WeathersListFragment(val userWantToWeather: (Int)-> Unit): Fragment(), Cor
             nowLocationClient.lastLocation.addOnSuccessListener(activity) { location: Location ->
                 latitude = location.latitude
                 longitude = location.longitude
-                Log.d("hi", "coords: $latitude and  $longitude")
                 latitude?.let{ lt->
                     longitude?.let { ln->
                         launch {
@@ -83,11 +85,9 @@ class WeathersListFragment(val userWantToWeather: (Int)-> Unit): Fragment(), Cor
                                     )
                                 )
                             }
-                            cityList.forEach({})
                             activity.runOnUiThread {
                                 recyclerView.adapter = WeatherAdapter(cityList) { int: Int ->
                                     userWantToWeather(int)
-                                    Log.d("hi", int.toString())
                                 }
                             }
                         }
@@ -98,12 +98,21 @@ class WeathersListFragment(val userWantToWeather: (Int)-> Unit): Fragment(), Cor
         searchView.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
                 val searchingCity = searchView.query.toString()
-                launch {
-                    ApiFactory.getWeatherByCityName(searchingCity)?.id?.let {
-                        userWantToWeather(it)
-                    }
-                }
-                return true
+                    launch {
+                        try {
+                            var cityId = ApiFactory.getWeatherByCityName(searchingCity)?.id
+                            if(cityId != null) {
+                                activity?.runOnUiThread {
+                                    userWantToWeather(cityId)
+                                }
+                            } else {
+                                Snackbar.make(frame_main,"такова города нет...", Snackbar.LENGTH_LONG).show()
+                            }
+                                }  catch (e:HttpException){
+                            Snackbar.make(frame_main,"такова города нет...", Snackbar.LENGTH_LONG).show()
+                            }
+                        }
+                    return true
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
