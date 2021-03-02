@@ -17,4 +17,8 @@ interface WeatherApi {
         @Query("lon") longitude: Double,
         @Query("cnt") count: Int
         ): WeatherResponseByList
+
+    @GET("weather?units=metric&lang=ru")
+    suspend fun getWeatherById(
+        @Query("id") id: Int): WeatherResponse
 }

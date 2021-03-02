@@ -1,8 +1,8 @@
 package com.example.androidcourse.services
 
-class WindService {
-
-    fun findWind (wind: Double): String{
+class WindService() {
+companion object {
+    fun findWind(wind: Double): String {
         when (wind) {
             in 337.5..22.5 -> {
                 return "north"
@@ -31,4 +31,5 @@ class WindService {
             else -> return ""
         }
     }
+}
 }

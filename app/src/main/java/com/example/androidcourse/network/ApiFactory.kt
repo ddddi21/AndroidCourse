@@ -54,4 +54,8 @@ object ApiFactory {
     suspend fun getWeatherByCityName (name:String): WeatherResponse {
         return weatherApi.getWeather(name)
     }
+
+    suspend fun getWeatherByCityId (name:Int): WeatherResponse {
+        return weatherApi.getWeatherById(name)
+    }
 }

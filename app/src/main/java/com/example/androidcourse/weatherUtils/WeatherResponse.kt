@@ -82,7 +82,7 @@ data class Weather(
 
 data class Wind(
     @SerializedName("deg")
-    var deg: Int,
+    var deg: Double,
     @SerializedName("speed")
     var speed: Double
 )
