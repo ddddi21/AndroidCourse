@@ -1,3 +1,11 @@
 <resources>
-    <string name="app_name">AndroidCourse</string>
+    <string name="app_name">Calculator</string>
+    <string name="field_1">First</string>
+    <string name="field_2">Second</string>
+    <string name="field_result">Result</string>
+    <string name="calculate">Calculate</string>
+
+    <string name="error_title">Error</string>
+
+    <string name="alert_dialog_positive_button">Ok</string>
 </resources>
